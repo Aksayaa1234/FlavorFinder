@@ -1,0 +1,43 @@
+[
+    { 
+        "diet": "Diabetic Friendly",
+        "discription": "A diabetic-friendly diet focuses on managing blood sugar levels by emphasizing whole, unprocessed foods like vegetables, lean proteins, and whole grains. It limits added sugars, refined carbohydrates, and saturated and unhealthy fats. Regular physical activity, in addition to the dietary adjustments, plays a vital role in achieving effective blood sugar control for individuals with diabetes." 
+    },
+    {
+        "diet": "Vegetarian",
+        "discription": "Vegetarian cuisine celebrates the vibrant flavors and textures of plant-based ingredients. It offers a diverse range of dishes, from hearty stews and flavorful curries to delicate salads and wholesome grains, all without the inclusion of meat or poultry. Vegetarian cuisine embraces the abundance of fruits, vegetables, legumes, nuts, and seeds, providing a healthy and satisfying culinary experience."
+    },
+    {
+        "diet": "High Protein Vegetarian",
+        "discription": "A high protein vegetarian course is a meal designed for individuals following a plant-based diet who require a significant amount of protein.  It typically features ingredients rich in protein, such as legumes, tofu, tempeh, seitan, nuts, seeds, and quinoa.  These dishes are flavorful and satisfying, offering a balanced source of protein and essential nutrients, ideal for athletes, weight management, or simply enjoying a hearty and nutritious meal."
+    },
+    {
+        "diet": "Non Vegeterian",
+        "discription": "Non-vegetarian cuisine embraces the flavorful world of meat, poultry, seafood, and other animal-based ingredients. This diverse culinary category offers a wide array of dishes, from classic roast chicken and flavorful stews to succulent grilled steaks and delicate seafood preparations. Each dish brings a unique texture, taste, and aroma, captivating taste buds with a variety of savory options."
+    },
+    { 
+        "diet": "High Protein Non Vegetarian",
+        "discription": "A high-protein, non-vegetarian diet prioritizes protein intake from animal sources, such as meat, poultry, fish, eggs, and dairy products. This approach aims to increase satiety, promote muscle growth and repair, and potentially aid in weight management. It emphasizes lean protein sources while minimizing saturated fats and processed foods."
+     },
+    {
+        "diet": "Eggetarian",
+        "discription": "Eggetarian cuisine is a culinary journey that embraces the unique flavor and versatility of eggs. While excluding meat, poultry, and seafood, eggetarians enjoy a wide variety of dishes featuring eggs as a primary ingredient.  From classic omelets and frittatas to innovative egg-based curries and stir-fries, this culinary style offers a diverse range of textures and flavors, catering to those seeking a balanced and flavorful approach to food."
+    },
+    {
+        "diet": "Vegan",
+        "discription": "Vegan cuisine embraces a plant-based approach, entirely excluding all animal products, including meat, poultry, fish, eggs, and dairy.  It focuses on a diverse array of fruits, vegetables, grains, legumes, nuts, and seeds to create flavorful and nutritious dishes. Vegan cooking promotes a compassionate and sustainable lifestyle, reducing environmental impact while embracing a world of creative and delicious plant-based culinary possibilities."
+    },
+    {
+        "diet": "No Onion No Garlic (Sattvic)",
+        "discription": "No Onion No Garlic (Sattvic) cuisine is a vegetarian culinary tradition that emphasizes purity and lightness, adhering to principles of Sattvic living.  It strictly avoids onions and garlic, considered rajasic (stimulating) ingredients, instead relying on a vibrant palette of fresh herbs, spices, and vegetables to create flavorful and wholesome dishes. These recipes promote mental clarity, emotional balance, and spiritual well-being, making Sattvic cooking a mindful and nourishing approach to food."
+    },
+    { 
+        "diet": "Gluten Free",
+        "discription": "A gluten-free diet eliminates gluten, a protein found in wheat, barley, and rye. It's often followed by people with celiac disease, an autoimmune disorder where gluten triggers damage to the small intestine. This diet excludes bread, pasta, pastries, and many processed foods containing these grains, focusing instead on naturally gluten-free alternatives."
+    },
+    {
+        "diet": "Sugar Free Diet",
+        "discription": "A Sugar-Free Diet strictly limits or eliminates added sugars, focusing on natural, unprocessed sources of sweetness. This approach aims to control blood sugar levels, reduce inflammation, and promote overall health.  By prioritizing whole foods like fruits, vegetables, lean proteins, and healthy fats, a Sugar-Free Diet helps manage weight, improve energy levels, and reduce the risk of chronic diseases, offering a balanced and mindful way to nourish the body."
+    }
+  ]
+  

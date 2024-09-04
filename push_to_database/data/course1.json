@@ -1,0 +1,26 @@
+[
+    [
+        {"course":"Side Dish"},
+        {"course":"Main Course"},
+        {"course":"South Indian Breakfast"},
+        {"course":"Lunch"},
+        {"course":"Snack"},
+        {"course":"High Protein Vegetarian"},
+        {"course":"Dinner"},
+        {"course":"Appetizer"},
+        {"course":"Indian Breakfast"},
+        {"course":"Dessert"},
+        {"course":"North Indian Breakfast"},
+        {"course":"One Pot Dish"},
+        {"course":"World Breakfast"},
+        {"course":"Non Vegeterian"},
+        {"course":"Vegetarian"},
+        {"course":"Eggetarian"},
+        {"course":"No Onion No Garlic (Sattvic)"},
+        {"course":"Brunch"},
+        {"course":"Vegan"},
+        {"course":"Sugar Free Diet"}
+    ]
+]
+
+

@@ -1,0 +1,13 @@
+[
+    { "diet": "Diabetic Friendly" },
+    { "diet": "Vegetarian" },
+    { "diet": "High Protein Vegetarian" },
+    { "diet": "Non Vegeterian" },
+    { "diet": "High Protein Non Vegetarian" },
+    { "diet": "Eggetarian" },
+    { "diet": "Vegan" },
+    { "diet": "No Onion No Garlic (Sattvic)" },
+    { "diet": "Gluten Free" },
+    { "diet": "Sugar Free Diet" },
+    {"length":10}
+  ]

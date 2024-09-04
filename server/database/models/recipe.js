@@ -1,0 +1,73 @@
+const mongoose=require("mongoose");
+require("../connect")
+
+const recipeSchema=mongoose.Schema({
+    recipe:{
+        type:String,
+        lowercase:true,
+        trim:true,
+        required:true
+    },
+    raw_ingredients:{
+        type:String,
+        lowercase:true,
+        trim:true,
+        required:true
+    },
+    serving:{
+        type:Number,
+        min:1,
+        default:1,
+        required:true
+    },
+    preparing_time:{
+        type:Number,
+        min:1,
+        default:1,
+        required:true
+    },
+    instructions:{
+        type:String,
+        lowercase:true,
+        trim:true,
+        required:true
+    },
+    ingredients:[
+        {
+            ingredient:{
+                type:mongoose.Schema.ObjectId,
+                ref:"ingredients",
+                required:true
+            },
+            quantity:{
+                type:Number,
+                required:true
+            },
+            unit:{
+                type:String,
+                lowercase:true,
+                trim:true,
+                default:"-"
+            }
+        }
+    ],
+    cuisine:{
+        type:mongoose.Schema.ObjectId,
+        ref:"cuisine",
+        required:true
+    },
+    course:{
+        type:mongoose.Schema.ObjectId,
+        ref:"course",
+        required:true
+    },
+    diet:{
+        type:mongoose.Schema.ObjectId,
+        ref:"diet",
+        required:true
+    }
+});
+
+const model=mongoose.model("recipe",recipeSchema,"recipe");
+
+module.exports=model;
