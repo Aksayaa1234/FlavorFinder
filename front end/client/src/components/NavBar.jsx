@@ -10,7 +10,8 @@ const NavBar=()=>{
     const tab=[
         {id:1,title:"RECIPE FINDER",link:"/"},
         {id:2,title:"RECIPE FILTER",link:"/find"},
-        {id:3,title:"CONTACT US",link:"/contact"}
+        {id:3,title:"CONTACT US",link:"/contact"},
+        {id:4,title:"LOGIN",link:"/login"}
     ]
 
     const handleClick=(id)=>{
@@ -27,7 +28,7 @@ const NavBar=()=>{
                     <div style={{display:"flex",gap:{xs: 0.5, sm: 1.5},alignItems: 'center'}}>
                          {tab.map((tab)=>{
                             return(
-                            <Link key={tab.id} component={RouterLink} onClick={()=>{handleClick(tab.id)}} to={tab.link} sx={{backgroundColor: currTab===tab.id ?'secondary.main':'primary.main',padding:{ xs: 1, sm: 1.6 },borderRadius:{ xs: 4, sm: 6 },color:'white.main',margin:{xs:0.2,sm:1},textDecoration:"none",fontSize:{ xs: 11, sm: 13 },cursor:"pointer"}}>{tab.title}</Link>
+                            <Link key={tab.id} component={RouterLink} onClick={()=>{handleClick(tab.id)}} to={tab.link} sx={{backgroundColor: currTab===tab.id ?'secondary.main':'primary.main',padding:{ xs: 1, sm: 1.6 },borderRadius:{ xs: 4, sm: 6 },color:'white.main',margin:{xs:0.3,sm:1},textDecoration:"none",fontSize:{ xs: 11, sm: 13 },cursor:"pointer",minWidth:70}}>{tab.title}</Link>
                             )
                           })} 
                     </div>
