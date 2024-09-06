@@ -57,12 +57,12 @@ const recipeDisplay=async(req,res)=>{
     }
 }
 
-const recipeSearch=async(req,res)=>{
+const recipeTitleSearch=async(req,res)=>{
     try
     {
         let data=await recipeModel.find({recipe:{$regex:new RegExp(`\\b${req.query.token}`, 'i')}},{_id:true,recipe:true});
         //console.log(data);
-        if(data.length==0)
+        if(!data)
         {
             res.status(400);
             res.json({message:"no match found"});
@@ -85,7 +85,7 @@ const recipeSearch=async(req,res)=>{
         let data2=[];
         for(let i=0;i<parseInt(req.query.limit) && i<list.length ;i++)
         {
-            data2.push(list[i].title);
+            data2.push({title:list[i].title,id:list[i]._id});
         }
         res.status(200);
         res.json({message:"recipe details",data:data2});
@@ -99,4 +99,38 @@ const recipeSearch=async(req,res)=>{
     }
 }
 
-module.exports={recipeSearch,recipeDisplay};
+const recipeMaincontent=async(req,res)=>{
+    try{
+        let data=await recipeModel.findById(req.query.id);
+        res.status(200);
+        res.json({message:"data",data:data});
+        return;
+    }
+    catch(err){
+        res.status(500);
+        console.log(err);
+        res.json({message:"server error"});
+        return;
+    }
+}
+
+const recipeSearchresult=async(req,res)=>{
+    try{
+        let data=await recipeModel.find({recipe:{$regex:new RegExp(`\\b${req.query.token}`, 'i')}},{recipe:true,preparing_time:true,cuisine:true,course:true,diet:true}).populate([
+            {path:"cuisine",select:"cuisine -_id"},
+            {path:"course",select:"course -_id"},
+            {path:"diet",select:"diet -_id"}
+        ]);
+        res.status(200);
+        res.json({message:"data",data:data});
+        return;
+    }
+    catch(err){
+        res.status(500);
+        console.log(err);
+        res.json({message:"server error"});
+        return;
+    }
+}
+
+module.exports={recipeTitleSearch,recipeDisplay,recipeMaincontent,recipeSearchresult};

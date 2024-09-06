@@ -34,7 +34,7 @@ const useSearch=(location,history)=>
     const fetchSuggestion=async(search)=>{
         try
         {
-            const response= await fetch(`http://localhost:8000/api/recipe/search?token=${search}&limit=5`);
+            const response= await fetch(`/api/recipe/search?token=${search}&limit=5`);
             const data=await response.json()
             setSuggestions(data.data);
             //console.log(suggestions);

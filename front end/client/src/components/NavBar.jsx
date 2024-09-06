@@ -20,7 +20,7 @@ const NavBar=()=>{
     return(
         <>
             <AppBar position="sticky">
-                <Toolbar sx={{height:70,justifyContent:"space-between"}}>
+                <Toolbar sx={{height:70,justifyContent:"space-between",padding:0.5}}>
                     <Box sx={{display:"flex", alignItems: 'center'}}>
                     <IconButton><RestaurantMenuIcon fontSize="large" sx={{color:'secondary.main'}}/></IconButton>
                     <Typography sx={{color:'white.main'}} fontWeight={600} variant="h5">FLAVOR FINDER</Typography>
@@ -28,7 +28,7 @@ const NavBar=()=>{
                     <div style={{display:"flex",gap:{xs: 0.5, sm: 1.5},alignItems: 'center'}}>
                          {tab.map((tab)=>{
                             return(
-                            <Link key={tab.id} component={RouterLink} onClick={()=>{handleClick(tab.id)}} to={tab.link} sx={{backgroundColor: currTab===tab.id ?'secondary.main':'primary.main',padding:{ xs: 1, sm: 1.6 },borderRadius:{ xs: 4, sm: 6 },color:'white.main',margin:{xs:0.3,sm:1},textDecoration:"none",fontSize:{ xs: 11, sm: 13 },cursor:"pointer",minWidth:70}}>{tab.title}</Link>
+                            <Link key={tab.id} component={RouterLink} onClick={()=>{handleClick(tab.id)}} to={tab.link} sx={{backgroundColor: currTab===tab.id ?'secondary.main':'primary.main',padding:{ xs: 1, sm: 1.6 },borderRadius:{ xs: 4, sm: 6 },color:'white.main',margin:{xs:0.3,sm:1},textDecoration:"none",fontSize:{ xs: 11, sm: 13 },cursor:"pointer",minWidth:"4rem"}}>{tab.title}</Link>
                             )
                           })} 
                     </div>

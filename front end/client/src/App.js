@@ -1,8 +1,11 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import NavBar from "./components/NavBar";
-import Search from "./components/Search";
 import { Route, Routes } from "react-router-dom";
 import Body from "./components/Body";
+import Login from "./page/Login";
+import Template from "./page/Template";
+import Home from "./page/Home";
+import Recipes from "./page/Recipe";
+import { QueryProvider } from "./context/QueryContext";
 
 const theam=createTheme({
   palette:{
@@ -25,11 +28,16 @@ function App() {
     <>
         <CssBaseline/>
         <ThemeProvider theme={theam}>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<Search/>}></Route>
-          <Route path="/find" element={<Body/>}></Route>
-        </Routes>   
+          <QueryProvider>
+            <Routes>
+              <Route path="/" element={<Template/>}>
+                  <Route index element={<Home/>}/>
+                  <Route path="/find" element={<Body/>}/>
+                  <Route path="/login" element={<Login/>}/>
+                  <Route path="/recipe" element={<Recipes/>}/>
+              </Route>
+            </Routes>  
+          </QueryProvider> 
         </ThemeProvider>
     </>
   );
