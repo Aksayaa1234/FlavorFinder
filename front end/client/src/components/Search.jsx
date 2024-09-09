@@ -16,12 +16,13 @@ const Search=()=>{
        setInput({token:event.target.value,limit:5});
     }
 
-    const handleClick = () => {
-        
+    const handleClick = (id) => {
+        setQuery("id",id);
+        change("/recipe");
     };
     const handelSubmit=()=>{
         setQuery("token",Searchbutton.current.value);
-        change("/recipe");
+        change("/recipesearch");
     };
 
     return (
@@ -32,8 +33,8 @@ const Search=()=>{
             </Box>
             {
                 suggestions && suggestions.length>0 && (
-                    <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:1}}>
-                        <List sx={{backgroundColor:'white.main',width:{xs:300,sm:450,md:700},padding:0,boxShadow: 2,maxHeight:"35vh",overflowY:"auto"}}>
+                    <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:1,position:"relative"}}>
+                        <List sx={{backgroundColor:'white.main',width:{xs:300,sm:450,md:700},padding:0,boxShadow: 2}}>
                             {suggestions.map((ele,index)=>(
                                 <>
                                 <ListItemButton key={index} onClick={() =>handleClick(ele.id)}><Typography>{ele.title}</Typography></ListItemButton>

@@ -99,20 +99,6 @@ const recipeTitleSearch=async(req,res)=>{
     }
 }
 
-const recipeMaincontent=async(req,res)=>{
-    try{
-        let data=await recipeModel.findById(req.query.id);
-        res.status(200);
-        res.json({message:"data",data:data});
-        return;
-    }
-    catch(err){
-        res.status(500);
-        console.log(err);
-        res.json({message:"server error"});
-        return;
-    }
-}
 
 const recipeSearchresult=async(req,res)=>{
     try{
@@ -122,7 +108,7 @@ const recipeSearchresult=async(req,res)=>{
             {path:"diet",select:"diet -_id"}
         ]);
         res.status(200);
-        res.json({message:"data",data:data});
+        res.json({message:"recipe main details",data:data});
         return;
     }
     catch(err){
@@ -133,4 +119,22 @@ const recipeSearchresult=async(req,res)=>{
     }
 }
 
-module.exports={recipeTitleSearch,recipeDisplay,recipeMaincontent,recipeSearchresult};
+const recipeDetail=async(req,res)=>{
+    try
+    {
+        let data= await recipeModel.findById(req.query.id)
+        .populate("cuisine","cuisine")
+        .populate("course","course")
+        .populate("diet","diet");
+        res.status(200);
+        res.json({message:"recipe full details",data:data});
+        return;
+    }
+    catch(err){
+        res.status(500);
+        res.json({message:"server error"});
+        return;
+    }
+}
+
+module.exports={recipeTitleSearch,recipeDisplay,recipeSearchresult,recipeDetail};

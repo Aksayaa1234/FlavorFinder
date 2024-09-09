@@ -4,9 +4,7 @@ import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import LocationOnIcon from '@mui/icons-material/LocationOn'; 
 import FastfoodIcon from '@mui/icons-material/Fastfood';
-import { useParams } from "react-router-dom";
 import { useGetApi } from "../hooks/useApi";
-import { useEffect } from "react";
 import { useQuery } from "../context/QueryContext";
 import RecipeMain from "../components/RecipeMain";
 
@@ -27,15 +25,13 @@ const Recipes=()=>{
             details.push(detail);
         }
     }
-    {recipe && add(recipe)}
-       
+       {recipe && add(recipe)};
     return(
         <>
         <Box sx={{backgroundColor:"white.cream",minHeight:'calc(100vh - 70px)',height:"100%"}}>
             <Search/>
-            {recipe &&(details.map((detail,index)=>(
-                <RecipeMain title={recipe[index].recipe} detail={detail} img="/flavor_finder_icon.png" index={index}/>
-              
+            {recipe && (details.map((detail,index)=>(
+                <RecipeMain title={recipe[index].recipe} detail={detail} img="/flavor_finder_icon.png" index={index}/>              
             )))}
             
         </Box>

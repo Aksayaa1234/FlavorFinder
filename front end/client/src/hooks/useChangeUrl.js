@@ -5,11 +5,12 @@ import { useQuery } from "../context/QueryContext";
 const useChangeUrl=()=>{
     //this hook is used to change the url using navigate in can change only path or path with same query params based on reset
    let navigate=useNavigate();
-   let [query,setQuery,removeQuery]=useQuery();
+   let [query,setQuery,removeQuery,clearQuery]=useQuery();
 
    const change=(path,reset=false)=>{
     if(reset)
     {
+        clearQuery();
         navigate({pathname:path})
     }
     else

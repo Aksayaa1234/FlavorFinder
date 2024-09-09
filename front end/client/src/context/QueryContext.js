@@ -30,5 +30,12 @@ export const useQuery = ()=>{
         query.set(key,value)
         history({pathname:location.pathname,search:query.toString()})
     }
-    return [query,setQuery,removeQuery]
+
+    const clearQuery=()=>{
+        for (let key of query.keys()) {
+            query.delete(key);
+        }
+        history({pathname:location.pathname})
+    }
+    return [query,setQuery,removeQuery,clearQuery]
 }
