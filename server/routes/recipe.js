@@ -8,5 +8,6 @@ router.get("/search",recipeCont.recipeTitleSearch);
 router.get("/searchresult",recipeCont.recipeSearchresult);
 router.get("/details",recipeCont.recipeDetail);
 router.get("/ingredients",ingredientsCont.ingredientsDetail);
+router.get("/discription",ingredientsCont.ingredientsDiscription);
 
 module.exports=router;

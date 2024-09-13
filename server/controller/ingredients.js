@@ -1,4 +1,5 @@
 const recipeModel=require("../database/models/recipe");
+const ingredientModel=require("../database/models/ingredients");
 
 const ingredientsDetail=async(req,res)=>{
     try
@@ -16,4 +17,19 @@ const ingredientsDetail=async(req,res)=>{
     }
 }
 
-module.exports={ingredientsDetail};
+const ingredientsDiscription=async(req,res)=>{
+    try
+    {
+        let data= await ingredientModel.findById(req.query.id);
+        res.status(200);
+        res.json({message:"recipe full details",data:data});
+        return;
+    }
+    catch(err){
+        res.status(500);
+        res.json({message:"server error"});
+        return;
+    }
+}
+
+module.exports={ingredientsDetail,ingredientsDiscription};
