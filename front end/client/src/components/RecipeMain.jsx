@@ -1,21 +1,29 @@
-import { Box, List, ListItem, Typography ,CircularProgress } from "@mui/material";
+import { Box, List, ListItem, Typography ,CircularProgress, Tooltip } from "@mui/material";
 import { veg_or_nonveg } from "../util/servingCalculation";
+import React from "react";
 
 const RecipeMain=(props)=>{
+    
     return(
         <>
         {props.detail ? 
-            <Box key={props.index} sx={{backgroundColor:"white.main",display:"flex",marginTop:"2rem",boxShadow:3}}>
-                <img src={props.img} height={200} width={200} style={{padding:"1rem",marginLeft:"1rem"}}></img>
-                <Box sx={{padding:"2rem", display:"flex",width:"100%",justifyContent: "space-between"}}>
+            <Box key={props.index} sx={{backgroundColor:"white.main",display:"flex",marginTop:"2rem",boxShadow:3,alignItems:"center"}}>
+                <Box sx={{padding:"1rem",marginLeft:"1rem",display:"flex"}}>
+                <img src={props.img} style={{borderRadius:5,maxHeight:"200px",maxWidth:"200px",width:"100%",height:"100%"}}></img>
+                </Box>
+                <Box sx={{padding:{xs:"1rem",sm:"1.5rem"}, display:"flex",width:"100%",justifyContent: "space-between"}}>
                     <Box>
-                        <Typography variant="h5" sx={{color:"secondary.main"}}>{props.title}</Typography>
+                        <Typography sx={{color:"secondary.main",fontSize:{xs:17,sm:20,md:25}}}>{props.title}</Typography>
                         <List>
                             { 
                             props.detail && props.detail.map((ele,index)=>(
                                 <ListItem sx={{display:"flex",alignItems:"center",pb:0}}>
-                                    {ele.icon}
-                                    <Typography sx={{marginLeft:1}}>{ele.data}</Typography> 
+                                    <Tooltip title={<React.Fragment><Typography sx={{color:'secondary.main',fontSize:{xs:16,sm:20,md:25}}} >{ele.data}</Typography><Typography sx={{fontSize:{xs:12,sm:15,md:17}}}>{ele.discription}</Typography></React.Fragment>} placement="right" componentsProps={{tooltip:{sx:{backgroundColor: 'white.cream',color:'black',boxShadow:3,fontSize: '1rem'}}}}>
+                                        <Box sx={{display:"flex",alignItems:"center"}} >
+                                            {ele.icon}
+                                            <Typography sx={{marginLeft:1}}>{ele.data}</Typography> 
+                                        </Box>
+                                    </Tooltip>   
                                     </ListItem>
                                 ))
                             }                       

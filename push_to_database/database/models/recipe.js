@@ -65,7 +65,10 @@ const recipeSchema=mongoose.Schema({
         type:mongoose.Schema.ObjectId,
         ref:"diet",
         required:true
-    }
+    },
+    image:[{
+        type:String
+    }]
 });
 
 const model=mongoose.model("recipe",recipeSchema,"recipe");

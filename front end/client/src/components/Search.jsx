@@ -9,7 +9,7 @@ import useChangeUrl from "../hooks/useChangeUrl";
 const Search=()=>{
     let [suggestions,setInput]=useGetApi("/api/recipe/search",null)
     let Searchbutton=useRef();
-    let [query,setQuery,removeQuery]=useQuery();
+    let [query,setQuery,removeQuery,clearQuery]=useQuery();
     let change=useChangeUrl();
 
     const searchchange=(event)=>{
@@ -17,10 +17,12 @@ const Search=()=>{
     }
 
     const handleClick = (id) => {
+        clearQuery();
         setQuery("id",id);
         change("/recipe");
     };
     const handelSubmit=()=>{
+        clearQuery();
         setQuery("token",Searchbutton.current.value);
         change("/recipesearch");
     };
@@ -32,7 +34,7 @@ const Search=()=>{
                 <Button variant="contained" onClick={handelSubmit} sx={{backgroundColor:'secondary.main',color:'white.main',height:40,borderTopRightRadius:50,borderBottomRightRadius:50,borderBottomLeftRadius:0,borderTopLeftRadius:0}}>Search</Button>
             </Box>
             {
-                suggestions && suggestions.length>0 && (
+               suggestions && suggestions.length>0 && (
                     <Box sx={{display:"flex",justifyContent:"center",alignItems:"center",marginTop:1,position:"relative"}}>
                         <List sx={{backgroundColor:'white.main',width:{xs:300,sm:450,md:700},padding:0,boxShadow: 2}}>
                             {suggestions.map((ele,index)=>(

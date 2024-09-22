@@ -7,9 +7,9 @@ const queryContext = createContext()
 export const QueryProvider = ({children})=>{
     let location = useLocation()
     const queryparams = new URLSearchParams(location.search);
-    let [query,setQuery]=useState(queryparams);
+    let [query,setQueryparams]=useState(queryparams);
     return (
-        <queryContext.Provider value={{query,setQuery}}>
+        <queryContext.Provider value={{query,setQueryparams}}>
             {children}
         </queryContext.Provider>
     )
@@ -19,7 +19,7 @@ export const useQuery = ()=>{
     //this hook is used to change query params
     let history = useNavigate()
     let location = useLocation()
-    let {query} = useContext(queryContext)
+    let {query,setQueryparams} = useContext(queryContext)
 
     const removeQuery = (key) =>{
         query.delete(key)
@@ -28,6 +28,7 @@ export const useQuery = ()=>{
 
     const setQuery = (key,value)=>{
         query.set(key,value)
+        setQueryparams(()=>(new URLSearchParams(query)));
         history({pathname:location.pathname,search:query.toString()})
     }
 

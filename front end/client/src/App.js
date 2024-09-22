@@ -1,12 +1,12 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
-import Body from "./components/Body";
 import Login from "./page/Login";
 import Template from "./page/Template";
 import Home from "./page/Home";
 import Recipes from "./page/Recipe";
 import { QueryProvider } from "./context/QueryContext";
 import RecipeDetails from "./page/RecipeDetails";
+import RecipeFilter from "./page/RecipeFilter";
 
 const theam=createTheme({
   palette:{
@@ -33,7 +33,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Template/>}>
                   <Route index element={<Home/>}/>
-                  <Route path="/find" element={<Body/>}/>
+                  <Route path="/find" element={<RecipeFilter />}/>
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/recipesearch" element={<Recipes/>}/>
                   <Route path="/recipe" element={<RecipeDetails/>}/>

@@ -79,8 +79,19 @@ const addRecipe= async()=>{
     }
 }
 
+const addImages=async()=>{
+    let data=fs.readFileSync("./data/recipe_url_map_29.json","utf8");
+    data=JSON.parse(data);
+    let title=Object.keys(data);
 
-addRecipe()
+    for(let i=0;i<title.length;i++)
+    {
+        let data1=await recipeSchema.updateOne({recipe:title[i]},{$set:{image:data[title[i]]}})
+        //console.log(data1.acknowledge);
+    }
+}
+
+addImages()
 .then(()=>{
     console.log("added sucessfully");
 })

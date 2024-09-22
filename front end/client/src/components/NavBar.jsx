@@ -2,12 +2,14 @@
 import { AppBar, Box, Toolbar, Typography , Link, IconButton} from "@mui/material"
 import { useState} from "react";
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { useQuery } from "../context/QueryContext";
+import { useEffect } from "react";
 
 const NavBar=()=>{
     const [currTab,setcurrTab]=useState(1);
     let [query,setQuery,removeQuery,clearQuery]=useQuery()
+    let location=useLocation();
 
     const tab=[
         {id:1,title:"RECIPE FINDER",link:"/"},
@@ -15,6 +17,17 @@ const NavBar=()=>{
         {id:3,title:"CONTACT US",link:"/contact"},
         {id:4,title:"LOGIN",link:"/login"}
     ]
+
+    useEffect(()=>{
+        for(let i=0;i<tab.length;i++)
+        {
+            if(location.pathname==tab[i].link)
+            {
+                setcurrTab(tab[i].id);
+                break;
+            }
+        }
+    })
 
     const handleClick=(id)=>{
         clearQuery();

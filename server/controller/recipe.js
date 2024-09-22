@@ -102,10 +102,10 @@ const recipeTitleSearch=async(req,res)=>{
 
 const recipeSearchresult=async(req,res)=>{
     try{
-        let data=await recipeModel.find({recipe:{$regex:new RegExp(`\\b${req.query.token}`, 'i')}},{recipe:true,preparing_time:true,cuisine:true,course:true,diet:true}).populate([
-            {path:"cuisine",select:"cuisine -_id"},
-            {path:"course",select:"course -_id"},
-            {path:"diet",select:"diet -_id"}
+        let data=await recipeModel.find({recipe:{$regex:new RegExp(`\\b${req.query.token}`, 'i')}},{recipe:true,preparing_time:true,cuisine:true,course:true,diet:true,image:true}).populate([
+            {path:"cuisine",select:"cuisine -_id discription"},
+            {path:"course",select:"course -_id discription"},
+            {path:"diet",select:"diet -_id discription"}
         ]);
         res.status(200);
         res.json({message:"recipe main details",data:data});
@@ -123,9 +123,9 @@ const recipeDetail=async(req,res)=>{
     try
     {
         let data= await recipeModel.findById(req.query.id)
-        .populate("cuisine","cuisine")
-        .populate("course","course")
-        .populate("diet","diet");
+        .populate("cuisine","cuisine discription")
+        .populate("course","course discription")
+        .populate("diet","diet discription");
         res.status(200);
         res.json({message:"recipe full details",data:data});
         return;
@@ -137,4 +137,15 @@ const recipeDetail=async(req,res)=>{
     }
 }
 
+
+const filterrecipe=async(req,res)=>{
+    try{
+        
+    }
+    catch(err){
+        res.status(500);
+        res.json({message:"server error"});
+        return;
+    }
+}
 module.exports={recipeTitleSearch,recipeDisplay,recipeSearchresult,recipeDetail};
