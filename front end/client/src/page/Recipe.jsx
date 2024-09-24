@@ -37,7 +37,7 @@ const Recipes=()=>{
         <Box sx={{backgroundColor:"white.cream",minHeight:'calc(100vh - 70px)',height:"100%"}}>
             <Search/>
             {recipe && (details.map((detail,index)=>(
-                <RecipeMain title={recipe[index].recipe} detail={detail} img={recipe[index].image? recipe[index].image[0]: "/flavor_finder_icon.png" } index={index}/>              
+                <RecipeMain id={recipe[index]._id} title={recipe[index].recipe} detail={detail} img={recipe[index].image? recipe[index].image[0]: "/flavor_finder_icon.png" } index={index}/>              
             )))}
             
         </Box>

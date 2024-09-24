@@ -4,7 +4,7 @@ import { useGetApi } from "../hooks/useApi";
 
 const InstructionCard=()=>{
     let [query,setQuery,removeQuery]=useQuery();
-    let [ing,setIngredients]=useGetApi("/api/recipe/ingredients",{id:query.get("id")});
+    let [ing,setIngredients]=useGetApi("/api/ingredients",{id:query.get("id")});
 
     return(
         <>

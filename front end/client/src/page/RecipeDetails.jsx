@@ -18,7 +18,6 @@ const RecipeDetails=()=>{
 
     let detail=[];
     const add=(recipe)=>{
-        console.log(recipe);
         detail.push({icon:<AccessAlarmIcon/>,data:recipe.preparing_time});
         detail.push({icon:<LocationOnIcon/>,data:recipe.cuisine.cuisine,discription:recipe.cuisine.discription});
         detail.push({icon:<RestaurantMenuIcon/>,data:recipe.course.course,discription:recipe.course.discription});

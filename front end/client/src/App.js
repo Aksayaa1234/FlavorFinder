@@ -7,6 +7,7 @@ import Recipes from "./page/Recipe";
 import { QueryProvider } from "./context/QueryContext";
 import RecipeDetails from "./page/RecipeDetails";
 import RecipeFilter from "./page/RecipeFilter";
+import Contact from "./page/Contact";
 
 const theam=createTheme({
   palette:{
@@ -37,6 +38,7 @@ function App() {
                   <Route path="/login" element={<Login/>}/>
                   <Route path="/recipesearch" element={<Recipes/>}/>
                   <Route path="/recipe" element={<RecipeDetails/>}/>
+                  <Route path="/contact" element={<Contact/>}/>
               </Route>
             </Routes>  
           </QueryProvider> 
