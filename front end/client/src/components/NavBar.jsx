@@ -14,8 +14,8 @@ const NavBar=()=>{
     const tab=[
         {id:1,title:"RECIPE FINDER",link:"/"},
         {id:2,title:"RECIPE FILTER",link:"/find"},
-        {id:3,title:"CONTACT US",link:"/contact"},
-        {id:4,title:"LOGIN",link:"/login"}
+        {id:3,title:"CONTACT US",link:"/contact"}
+        //{id:4,title:"LOGIN",link:"/login"}
     ]
 
     useEffect(()=>{

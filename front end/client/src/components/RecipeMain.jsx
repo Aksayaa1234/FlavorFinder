@@ -21,7 +21,7 @@ const RecipeMain=(props)=>{
         {props.detail ? 
             <Box key={props.index} sx={{backgroundColor:"white.main",display:"flex",marginTop:"2rem",boxShadow:3,alignItems:"center"}} onClick={()=>handleClick(props)}>
                 <Box sx={{padding:"1rem",marginLeft:"1rem",display:"flex"}}>
-                <img src={props.img} style={{borderRadius:5,maxHeight:"200px",maxWidth:"200px",width:"100%",height:"100%"}}></img>
+                <img src={props.img} style={{borderRadius:5,maxHeight:"200px",maxWidth:"200px",width:"100%",height:"100%",transform:"scale(1)",transition: "transform 0.2s"}} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}></img>
                 </Box>
                 <Box sx={{padding:{xs:"1rem",sm:"1.5rem"}, display:"flex",width:"100%",justifyContent: "space-between"}}>
                     <Box>

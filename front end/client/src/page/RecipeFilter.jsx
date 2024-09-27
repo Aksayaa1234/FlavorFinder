@@ -80,10 +80,8 @@ const RecipeFilter=()=>{
             }
             if(diet!="")
             dietlist=dietcheking(diet);
-            //console.log(ing);
             setRecipe({ingredients:ing,diet:dietlist,course:course});
             setState(()=>false);
-            console.log(recipe);
         }
      }
 
